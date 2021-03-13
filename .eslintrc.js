@@ -25,13 +25,6 @@ module.exports = {
     'plugin:import/typescript',
   ],
   plugins: ['@typescript-eslint', 'react', 'prettier', 'react-hooks', 'import'],
-  settings: {
-    'import/resolver': {
-      webpack: {
-        config: './webpack.development.js',
-      },
-    },
-  },
 
   rules: {
     '@typescript-eslint/ban-ts-comment': 'warn',
@@ -50,6 +43,7 @@ module.exports = {
     ],
     'react/no-multi-comp': 'off',
     'react/require-default-props': 'off',
+    'react/jsx-one-expression-per-line': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
 

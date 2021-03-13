@@ -18,10 +18,12 @@ function App({}: AppProps) {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Edit
+          <code>src/App.tsx</code> and save to reload.
         </p>
         <p>
-          Page has been open for <code>{count}</code> seconds.
+          Page has been open for
+          <code>{count}</code> seconds.
         </p>
         <p>
           <a

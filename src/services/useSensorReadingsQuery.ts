@@ -6,7 +6,7 @@ import * as React from 'react';
 import sensorReadings from '../data/sensor_readings.json';
 
 type SensorType = 'O3' | 'NO2' | 'CO' | 'TEMP' | 'RH' | string;
-type Unit = 'ppm' | '%' | string;
+type Unit = 'ppm' | '%' | '\u00baC' | string;
 
 export interface SensorReading {
   /** UUID for this sensor reading */
@@ -35,7 +35,7 @@ export interface SensorReading {
 
 interface QueryResult {
   isLoading: boolean;
-  data: SensorReading | undefined;
+  data: SensorReading[] | undefined;
 }
 
 export const useSensorReadingsQuery = (): QueryResult => {
@@ -57,7 +57,7 @@ export const useSensorReadingsQuery = (): QueryResult => {
   }, []);
 
   const isLoading = status === 'loading';
-  const data: SensorReading | undefined =
+  const data: SensorReading[] | undefined =
     isLoading || status === 'idle' ? undefined : sensorReadings;
 
   return { isLoading, data };

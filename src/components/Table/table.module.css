@@ -1,0 +1,8 @@
+.stickHead {
+  position: sticky;
+  top: 0;
+}
+
+.tableRoot {
+  height: 100%;
+}

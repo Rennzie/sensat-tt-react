@@ -1,7 +1,6 @@
 /**
  * Hook emulating a server side request for `data/sensor_readings.json`
  */
-
 import * as React from 'react';
 import sensorReadings from '../data/sensor_readings.json';
 
@@ -38,9 +37,9 @@ interface QueryResult {
   data: SensorReading[] | undefined;
 }
 
-export const useSensorReadingsQuery = (): QueryResult => {
+export const useSensorReadingsQuery = (records = -1): QueryResult => {
   const [status, setStatus] = React.useState('idle');
-  /** Pretend we have a cache. Return data immediately if this is > 0. Using a ref so as not to loop */
+  // note: Pretend we have a cache. Return data immediately if this is > 0. Using a ref to avoid death loop - SFR 2021-03-14
   const loadCount = React.useRef(0);
 
   React.useEffect(() => {
@@ -58,7 +57,8 @@ export const useSensorReadingsQuery = (): QueryResult => {
 
   const isLoading = status === 'loading';
   const data: SensorReading[] | undefined =
-    isLoading || status === 'idle' ? undefined : sensorReadings;
-
+    isLoading || status === 'idle'
+      ? undefined
+      : sensorReadings.slice(0, records);
   return { isLoading, data };
 };

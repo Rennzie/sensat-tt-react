@@ -19,6 +19,7 @@ module.exports = {
   extends: [
     'airbnb-typescript',
     'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
     'prettier',
     'plugin:import/errors',
     'plugin:import/warnings',
@@ -44,6 +45,7 @@ module.exports = {
     'react/no-multi-comp': 'off',
     'react/require-default-props': 'off',
     'react/jsx-one-expression-per-line': 'off',
+    'react/jsx-indent': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
 
@@ -52,7 +54,7 @@ module.exports = {
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
     'import/prefer-default-export': 'off',
-
+    'no-prototype-builtins': 'off',
     'jsx-a11y/label-has-associated-control': 'warn',
   },
 };

@@ -1,8 +1,63 @@
-.stickHead {
-  position: sticky;
+.tableWrapper {
+  position: absolute;
+  bottom: 0;
   top: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-.tableRoot {
-  height: 100%;
+table {
+  display: grid;
+  border-collapse: collapse;
+  min-width: 100%;
+  grid-template-columns:
+    minmax(100px, 1fr) /*ID*/
+    minmax(80px, 1fr) /*BOX_ID*/
+    minmax(70px, 1fr) /*TYPE*/
+    minmax(100px, 1fr) /*NAME*/
+    minmax(70px, 1fr) /*RANGE_LOWER*/
+    minmax(70px, 1fr) /*RANGE_UPPER*/
+    minmax(80px, 1fr) /*READING*/
+    minmax(70px, 1fr) /*UNIT*/
+    minmax(100px, 1fr); /*TIME*/
+}
+
+thead,
+tbody,
+tr {
+  /* Lets the td and th elements be grid cells. */
+  display: contents;
+}
+
+th,
+td {
+  padding: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background: #0f0d0e;
+  text-align: left;
+  font-weight: normal;
+  font-size: 1rem;
+  color: white;
+}
+
+th:last-child {
+  border: 0;
+}
+
+td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: small;
+  color: #808080;
+}
+
+tr:nth-child(even) td {
+  background: #0f0d0e30;
 }

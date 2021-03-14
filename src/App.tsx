@@ -13,8 +13,6 @@ function App(): React.ReactElement {
 
   // note: Limited rows dues to performance: Would paginate or virtualise in reality - SFR 2021-03-14
   const { isLoading, data } = useSensorReadingsQuery(1000);
-  // note: Data would be "cached". This simulates that - SFR 2021-03-14
-  const { data: visData } = useSensorReadingsQuery();
 
   return (
     <Layout>
@@ -48,8 +46,8 @@ function App(): React.ReactElement {
         <TableContainer data={data} loadingTableData={isLoading} />
       </div>
       <div style={{ position: 'relative' }}>
-        {visView === 'map' ? <Map data={visData} /> : null}
-        {visView === 'chart' ? <ChartDashboard data={visData} /> : null}
+        {visView === 'map' ? <Map data={data} /> : null}
+        {visView === 'chart' ? <ChartDashboard data={data} /> : null}
       </div>
     </Layout>
   );

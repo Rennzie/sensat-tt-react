@@ -8,7 +8,7 @@ export function splitDataByKey(
 ): Record<string, SensorReading[]> {
   const dataByKey: Record<string, SensorReading[]> = {};
 
-  data?.forEach((item) => {
+  data?.forEach(item => {
     const boxKey = item[key];
     if (dataByKey.hasOwnProperty(boxKey)) {
       dataByKey[boxKey].push(item);
@@ -25,7 +25,7 @@ export function sanitiseBoxDataToChartDataSets(
 ): ChartData[] {
   const sanitisedDataSets: ChartData[] = [];
 
-  Object.values(boxes).forEach((boxSensors) => {
+  Object.values(boxes).forEach(boxSensors => {
     const dataBySensorId: Record<string, SensorReading[]> = splitDataByKey(
       boxSensors,
       'id',
@@ -37,17 +37,18 @@ export function sanitiseBoxDataToChartDataSets(
     const datasets: ChartDataSets[] = [];
 
     Object.entries(dataBySensorId).forEach(([sensorId, sensorData]) => {
-      const values = sensorData.map((sensor) => sensor.reading);
+      const values = sensorData.map(sensor => sensor.reading);
       const totalReadings = sensorData.length;
 
       if (totalReadings > longestSet) {
-        labels = sensorData.map((sensor) => new Date(sensor.reading_ts));
+        labels = sensorData.map(sensor => new Date(sensor.reading_ts));
         longestSet = totalReadings;
       }
 
       datasets.push({
         label: sensorId,
         data: values,
+        fill: false,
         backgroundColor: chroma.random().hex(),
         borderColor: chroma.random().hex(),
       });

@@ -1,0 +1,21 @@
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  grid-column-end: span 2;
+}
+
+h1 {
+  font-size: 24px;
+  margin-left: 20%;
+}
+
+.toggleControls {
+  display: flex;
+  flex-direction: column;
+}
+
+.toggle {
+  margin: 8px;
+}

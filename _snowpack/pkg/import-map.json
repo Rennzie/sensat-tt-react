@@ -1,0 +1,12 @@
+{
+  "imports": {
+    "@reactchartjs/react-chart.js": "./@reactchartjs/react-chartjs.js",
+    "@turf/helpers": "./@turf/helpers.js",
+    "chroma-js": "./chroma-js.js",
+    "date-fns": "./date-fns.js",
+    "leaflet": "./leaflet.js",
+    "react": "./react.js",
+    "react-dom": "./react-dom.js",
+    "react-leaflet": "./react-leaflet.js"
+  }
+}

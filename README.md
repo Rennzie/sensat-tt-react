@@ -37,72 +37,75 @@ You will also see any lint errors in the console.
 ## Design Decisions: 
 
 ### Libraries
-  - `snowpack`
-    - Develpment envorionment
-    - Crazy fast iteration time. avg of 50ms
-    - I've been wanting a reason to test it over webpack for a while
-    - Don't need to setup babel and all 100 other bits of tooling
-    - Down sides: Testing was not as straight forward as I'd hoped
-      - Sometimes the HMR needed to be rebooted, particularly when css changed
-      - New technology. I wouldn't rely on it in a production app. 
-    - Alternatives: Webpack & Babel, Typescript (tsc)
-  - `chart.js` 
-    - A robust charting solution built on canvas
-    - Out of the box charts
-    - Active community
-    - Quick to setup  
-    - Down side: library is very large, documentation's challenging to parse
-    - Alternatives: `visx`, 100s of other libraries
-  - `leaflet & react-leaflet`: 
-    - Mapping components
-    - I'm most comfortable with this library. 
-    - Its powerful and open source with a huge community. 
-    - Down side: Easy to have performance issues
-    - Alternatives: Mapbox, Open Layer, Google Maps
-  - `date-fns`:
-    - Date manipulation library
-    - Easy use like `lodash`
-    - Uses the native `Date` object making it a lighterweight alternative to `moment`
-    - Down side: none I can think of.
-    - Alternatives: Moment
-  - `turf.js`:
-    - Geospatial utility tools
-    - Best in class javascript Geospatial library. 
-    - Has utils and helpers for every use case
-    - Modularised limiting impact on package size
-    - Down sides: none
-    - Alternatives: none
-  - `chroma.js`
-    - Colour manipulation library
-    - Easy to use utility. 
-    - documentation is simply to follow
-    - Down sides: Function chaining can get convoluted
-    - Alternatives: not aware of any
+  
+- `leaflet & react-leaflet`:
+  - Mapping components
+  - I'm most comfortable with this library.
+  - Its powerful and open source with a huge community.
+  - Down side: Easy to have performance issues
+  - Alternatives: Mapbox, Open Layer, Google Maps
+- `date-fns`:
+  - Date manipulation library
+  - Easy use like `lodash`
+  - Uses the native `Date` object making it a lighterweight alternative to `moment`
+  - Down side: none I can think of.
+  - Alternatives: Moment
+- `turf.js`:
+  - Geospatial utility tools
+  - Best in class javascript Geospatial library.
+  - Has utils and helpers for every use case
+  - Modularised limiting impact on package size
+  - Down sides: none
+  - Alternatives: none
+- `chart.js`
+  - A robust charting solution built on canvas
+  - Out of the box charts
+  - Active community
+  - Quick to setup  
+  - Down side: library is very large, documentation's challenging to parse
+  - Alternatives: `visx`, 100s of other libraries
+- `chroma.js`
+  - Colour manipulation library
+  - Easy to use utility.
+  - documentation is simply to follow
+  - Down sides: Function chaining can get convoluted
+  - Alternatives: not aware of any
+- `snowpack`
+  - Develpment envorionment
+  - Crazy fast iteration time. avg of 50ms
+  - I've been wanting a reason to test it over webpack for a while
+  - Don't need to setup babel and all 100 other bits of tooling
+  - Down sides: Testing was not as straight forward as I'd hoped
+    - Sometimes the HMR needed to be rebooted, particularly when css changed
+    - New technology. I wouldn't rely on it in a production app.
+  - Alternatives: Webpack & Babel, Typescript (tsc)
 
-### Layout: 
-  - Side by side table&vis simplifies reponsive needs.
-  - Side by side allows for viewing table and visualisation at the same time
-    - Table is in context when viewing vis
-    - Toggling or overviews can get in the way
-  - Used `CSS Grid` as it makes creating 2 dimensional layouts easy
-    - Challenge can be making it stick to the bottom (used to much `position: absolute`)
-    - Could have used flex-box. Down side is number of `wrapper` divs required for the same result
+### Layout:
 
-### What I left out: 
+- Side by side table&vis simplifies reponsive needs.
+- Side by side allows for viewing table and visualisation at the same time
+  - Table is in context when viewing vis
+  - Toggling or overviews can get in the way
+- Used `CSS Grid` as it makes creating 2 dimensional layouts easy
+  - Challenge can be making it stick to the bottom (used to much `position: absolute`)
+  - Could have used flex-box. Down side is number of `wrapper` `div`s required for the same result
+
+### What I left out:
+
  *Not sure if this refers to the extra tasks or the list of improvements below?*
- 
-  - I chose the tasks based on my strengths
-  - Responsive design is time consuming
-    - Easy to go down the rabbit hole
-    - I doesn't highlight my core skills
-  - Performance: The table should have >8000 results. To show them all and not kill the browser I'd have paginated the request or used virtualisation (windowing)
-    - Left it out in favour of completing the extra tasks.
-    - I've added comments in the code indicating where I'd use these techniques
-  - e2e and unit testing
-    - I'd have used jest and `react-testing` library to complete these
-    - Time was the primary reason to not add in tests
 
-### Things to be improved: 
+- I chose the tasks based on my strengths
+- Responsive design is time consuming
+  - Easy to go down the rabbit hole
+  - I doesn't highlight my core skills
+- Performance: The table should have >8000 results. To show them all and not kill the browser I'd have paginated therequest or used virtualisation (windowing)
+  - Left it out in favour of completing the extra tasks.
+  - I've added comments in the code indicating where I'd use these techniques
+- e2e and unit testing
+  - I'd have used jest and `react-testing` library to complete these
+  - Time was the primary reason to not add in tests
+
+### Things to be improved:
 
 *The list is non-exhaustive but rather what came to mind while working. The task was intricate meaning there are many ways to improve it.*
 

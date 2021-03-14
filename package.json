@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/Rennzie/sensat-tt-react",
+  "homepage": "http://https://rennzie.github.io/sensat-tt-react/",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",

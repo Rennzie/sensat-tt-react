@@ -27,7 +27,7 @@ function TableContainer({
   const sortAbleData = React.useMemo(() => (data ? [...data] : []), [data]);
 
   const handleSortTime = () =>
-    setSortColumn((prevSort) => {
+    setSortColumn(prevSort => {
       if (prevSort !== 'time') {
         return 'time';
       }
@@ -35,7 +35,7 @@ function TableContainer({
     });
 
   const handleSortType = () =>
-    setSortColumn((prevSort) => {
+    setSortColumn(prevSort => {
       if (prevSort !== 'type') {
         return 'type';
       }
@@ -86,8 +86,9 @@ function TableContainer({
         </tr>
       </thead>
       <tbody>
+        {/* note: Virtualise this list. Would need to use alternate layout solution. Grid does not play nice with windowing - SFR 2021-03-14 */}
         {!loadingTableData ? (
-          sortedData?.map((sensor) => (
+          sortedData?.map(sensor => (
             <tr key={`${sensor.reading_ts}-${sensor.id}`}>
               <td>{sensor.id}</td>
               <td>{sensor.box_id}</td>

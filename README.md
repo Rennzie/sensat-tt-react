@@ -20,7 +20,7 @@ Cd into the repo and run:
 yarn install
 ```
 
-Use the scripts below to interact with the project. A deployed version is available [here](https://rennzie.github.io/sensat-tt-react/).
+Use the scripts below to interact with the project.
 
 ## Available Scripts
 

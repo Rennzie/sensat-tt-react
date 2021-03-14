@@ -9,13 +9,11 @@ export const sortByDate = (
   const isAsc = sortDirection === 'asc';
 
   return data.sort((a, b) => {
-    const dateA = a[properties];
-    const dateB = b[properties];
-
-    console.log({ dateA, dateB });
+    const dateA = new Date(a[properties]).getDate();
+    const dateB = new Date(b[properties]).getDate();
 
     if (isAsc) return dateA - dateB;
-    return dateA - dateB;
+    return dateB - dateA;
   });
 };
 

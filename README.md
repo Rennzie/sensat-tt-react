@@ -89,7 +89,8 @@ You will also see any lint errors in the console.
     - Could have used flex-box. Down side is number of `wrapper` divs required for the same result
 
 ### What I left out: 
-  - *Not sure if this refers to the extra tasks or the list of improvements below?*
+ *Not sure if this refers to the extra tasks or the list of improvements below?*
+ 
   - I chose the tasks based on my strengths
   - Responsive design is time consuming
     - Easy to go down the rabbit hole
@@ -102,6 +103,7 @@ You will also see any lint errors in the console.
     - Time was the primary reason to not add in tests
 
 ### Things to be improved: 
+
 *The list is non-exhaustive but rather what came to mind while working. The task was intricate meaning there are many ways to improve it.*
 
 - Responsive Design: tablet & mobile

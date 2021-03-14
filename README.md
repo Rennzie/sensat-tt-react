@@ -37,6 +37,15 @@ You will also see any lint errors in the console.
 ## Design Decisions: 
 
 ### Libraries
+  - `snowpack`
+    - Develpment envorionment
+    - Crazy fast iteration time. avg of 50ms
+    - I've been wanting a reason to test it over webpack for a while
+    - Don't need to setup babel and all 100 other bits of tooling
+    - Down sides: Testing was not as straight forward as I'd hoped
+      - Sometimes the HMR needed to be rebooted, particularly when css changed
+      - New technology. I wouldn't rely on it in a production app. 
+    - Alternatives: Webpack & Babel, Typescript (tsc)
   - `chart.js` 
     - A robust charting solution built on canvas
     - Out of the box charts
@@ -88,6 +97,9 @@ You will also see any lint errors in the console.
   - Performance: The table should have >8000 results. To show them all and not kill the browser I'd have paginated the request or used virtualisation (windowing)
     - Left it out in favour of completing the extra tasks.
     - I've added comments in the code indicating where I'd use these techniques
+  - e2e and unit testing
+    - I'd have used jest and `react-testing` library to complete these
+    - Time was the primary reason to not add in tests
 
 ### Things to be improved: 
 *The list is non-exhaustive but rather what came to mind while working. The task was intricate meaning there are many ways to improve it.*
@@ -101,4 +113,5 @@ You will also see any lint errors in the console.
 - Props for setting columns in `LoadingRow`
 - Use generic types in util functions
 - Reusable map popups with better styling
-- Styling of charts. 
+- Styling of charts
+- e2e and unit testing
